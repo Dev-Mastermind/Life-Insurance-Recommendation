@@ -42,6 +42,7 @@ Ensure the following are installed on your machine:
 ## Clone the Repository
 
 git clone <your-repo-url>
+
 cd <project-directory>
 
 2️⃣ Create the Environment Files
