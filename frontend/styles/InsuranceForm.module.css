@@ -1,0 +1,59 @@
+.insuranceContainer {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.insuranceTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.insuranceForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.insuranceInput,
+.insuranceSelect {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.insuranceButton {
+  padding: 12px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.insuranceResultBox {
+  margin-top: 30px;
+  background-color: #d4edda;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #c3e6cb;
+}
+
+.insuranceResultTitle {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.insuranceResultExplanation {
+  font-size: 14px;
+  color: #155724;
+  margin-top: 10px;
+}

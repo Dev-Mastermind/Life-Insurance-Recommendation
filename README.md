@@ -44,17 +44,16 @@ Ensure the following are installed on your machine:
 git clone <your-repo-url>
 cd <project-directory>
 
-Create the following .env files in your project:
+2️⃣ Create the Environment Files
+    backend/.env
 
-backend/.env
+     PORT=4000
+     DATABASE_URL=postgresql://postgres:postgres@db:5432/life_insurance
 
-PORT=4000
-DATABASE_URL=postgresql://postgres:postgres@db:5432/life_insurance
+    frontend/.env
+     NEXT_PUBLIC_API_URL=http://localhost:4000
 
-frontend/.env
-NEXT_PUBLIC_API_URL=http://localhost:4000
-
-Run this command from the project root
-docker-compose up --build
+3️⃣ Start the App
+   docker-compose up --build
 
 The frontend will be available at: http://localhost:3000
