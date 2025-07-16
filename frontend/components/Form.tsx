@@ -1,60 +1,37 @@
-import { useState } from "react";
+// components/Form.tsx
 import styles from "../styles/InsuranceForm.module.css";
 
-export default function InsuranceForm() {
-  const [data, setData] = useState({
-    age: "",
-    income: "",
-    dependents: "",
-    risk: "low",
-  });
-  const [result, setResult] = useState<any>(null);
-
-  const handleChange = (
+interface FormProps {
+  data: {
+    age: string;
+    income: string;
+    dependents: string;
+    risk: string;
+  };
+  result: any;
+  onChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
+  ) => void;
+  onSubmit: (e: React.FormEvent) => void;
+}
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/recommendation`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }
-      );
-
-      if (!res.ok) {
-        throw new Error(`HTTP error ${res.status}`);
-      }
-
-      const json = await res.json();
-      setResult(json);
-    } catch (err) {
-      console.error("Fetch error:", err);
-      setResult({
-        recommendation: "Error",
-        explanation: "Failed to get recommendation. Please try again.",
-      });
-    }
-  };
-
+export default function InsuranceForm({
+  data,
+  result,
+  onChange,
+  onSubmit,
+}: FormProps) {
   return (
     <div className={styles.insuranceContainer}>
       <h1 className={styles.insuranceTitle}>Life Insurance Recommendation</h1>
-      <form onSubmit={handleSubmit} className={styles.insuranceForm}>
+      <form onSubmit={onSubmit} className={styles.insuranceForm}>
         <input
           type="number"
           name="age"
           placeholder="Age"
           required
           value={data.age}
-          onChange={handleChange}
+          onChange={onChange}
           className={styles.insuranceInput}
         />
         <input
@@ -63,7 +40,7 @@ export default function InsuranceForm() {
           placeholder="Income"
           required
           value={data.income}
-          onChange={handleChange}
+          onChange={onChange}
           className={styles.insuranceInput}
         />
         <input
@@ -72,13 +49,13 @@ export default function InsuranceForm() {
           placeholder="Number of Dependents"
           required
           value={data.dependents}
-          onChange={handleChange}
+          onChange={onChange}
           className={styles.insuranceInput}
         />
         <select
           name="risk"
           value={data.risk}
-          onChange={handleChange}
+          onChange={onChange}
           className={styles.insuranceSelect}
         >
           <option value="low">Low Risk</option>
