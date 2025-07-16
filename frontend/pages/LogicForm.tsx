@@ -1,4 +1,3 @@
-// pages/LogicForm.tsx
 import { useState } from "react";
 import InsuranceForm from "../components/Form";
 

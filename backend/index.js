@@ -12,6 +12,22 @@ app.use(express.json());
 app.post("/recommendation", async (req, res) => {
   const { age, income, dependents, risk } = req.body;
 
+  if (
+    age === undefined ||
+    age === "" ||
+    income === undefined ||
+    income === "" ||
+    dependents === undefined ||
+    dependents === "" ||
+    risk === undefined ||
+    risk === ""
+  ) {
+    return res.status(400).json({
+      success: false,
+      message: "All fields are required",
+    });
+  }
+
   let recommendation = "";
   let explanation = "";
 
