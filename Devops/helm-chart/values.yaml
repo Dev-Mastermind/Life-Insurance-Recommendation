@@ -1,0 +1,15 @@
+backend:
+  image:
+    repository: <your-backend-image-repo>
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 4000
+
+frontend:
+  image:
+    repository: <your-frontend-image-repo>
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 3000 
