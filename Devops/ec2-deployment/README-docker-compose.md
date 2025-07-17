@@ -20,11 +20,11 @@ This guide explains how to deploy the Life Insurance Recommendation App using Do
 ## Usage
 1. Make the script executable:
    ```sh
-   chmod +x ansible/deploy-with-docker-compose.sh
+   chmod +x Devops/ec2-deployment/deploy-with-docker-compose.sh
    ```
 2. Run the script from the project root:
    ```sh
-   ./ansible/deploy-with-docker-compose.sh
+   ./Devops/ec2-deployment/deploy-with-docker-compose.sh
    ```
 3. The script will:
    - Check for Docker and docker-compose, installing them if missing

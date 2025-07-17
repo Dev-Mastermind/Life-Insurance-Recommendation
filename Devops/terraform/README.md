@@ -40,7 +40,7 @@ This directory contains Terraform configuration files to provision AWS infrastru
 ## Next Steps
 - **Push Docker images**: Use the ECR URLs to push your backend and frontend Docker images.
 - **Expand infrastructure**: Add VPC, subnets, security groups, ECS task definitions, and ECS services to fully automate deployment.
-- **Integrate with Ansible**: Use Ansible to configure EC2 instances or manage ECS services if needed.
+- **Integrate with EC2 deployment**: Use the Devops/ec2-deployment folder to configure EC2 instances or manage ECS services if needed.
 
 ---
 
